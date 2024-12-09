@@ -1,54 +1,68 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const ScaffoldExampleApp());
+class RunepediaWelcome extends StatelessWidget {
+  const RunepediaWelcome({Key? key}) : super(key: key);
 
-class ScaffoldExampleApp extends StatelessWidget {
-  const ScaffoldExampleApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ScaffoldExample(),
-    );
-  }
-}
-
-class ScaffoldExample extends StatefulWidget {
-  const ScaffoldExample({Key? key}) : super(key: key);
-
-  @override
-  State<ScaffoldExample> createState() => _ScaffoldExampleState();
-}
-
-class _ScaffoldExampleState extends State<ScaffoldExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Section'),
-      ),
+      backgroundColor: const Color(0xFF0A2635), // Dark teal background
       body: Center(
-        // Center the content of the screen
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
+            // Welcome to text
             Text(
-              "BIT42",
+              'Welcome to',
               style: TextStyle(
-                fontSize: 40, // Set font size
-                fontWeight: FontWeight.bold, // Set font weight
-                fontFamily: 'Roboto', // Set font family
-                color: Colors.blue, // Set text color
+                fontFamily: 'Beaufort',
+                fontSize: 86.822,
+                color: Color(0xFFBD8E32),
+                fontWeight: FontWeight.normal,
               ),
             ),
-            SizedBox(height: 20), // Add some spacing between texts
+            // Runepedia text
             Text(
-              "BIT42",
+              'Runepedia',
               style: TextStyle(
-                fontSize: 20, // Set font size
-                fontWeight: FontWeight.bold, // Set font weight
-                fontFamily: 'Times New Roman', // Set font family
-                color: Colors.red, // Set text color
+                fontFamily: 'SpiegelSans',
+                fontSize: 184.1057,
+                color: Color(0xFFEFE6D2),
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(height: 20),
+            // Line and triangle image
+            Image.asset(
+              'assets/images/line.png',
+              width: 400, // Adjust based on your needs
+              fit: BoxFit.contain,
+            ),
+            const SizedBox(height: 40),
+            // Clickable rune
+            GestureDetector(
+              onTap: () {
+                // Add your navigation logic here
+              },
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/images/Rune.png',
+                    width: 200, // Adjust based on your needs
+                    fit: BoxFit.contain,
+                  ),
+                  const SizedBox(height: 20),
+                  // Click the rune text
+                  Text(
+                    'Click the rune to explore',
+                    style: TextStyle(
+                      fontFamily: 'SpiegelSans',
+                      fontSize: 41.8331,
+                      color: Color(0xFFEFE6D2),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
